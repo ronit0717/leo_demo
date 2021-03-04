@@ -1,0 +1,18 @@
+.brand a img {
+    max-height: 2.5em;
+    margin-bottom: 0.7em;
+}
+
+.brand a span {
+    margin-left: 0.3em;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.brand a:hover {
+    color: #008890;
+}
+
+.site-header {
+    padding-top: 0.5em;
+}
