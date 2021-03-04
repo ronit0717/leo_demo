@@ -1,10 +1,10 @@
 import React from 'react';
 
+import WfgBody from "../wfg-body"
+
 const AppPage = () => {
     return (
-        <div>
-            Hello World, this is app page
-        </div>
+        <WfgBody />
     );
 };
 

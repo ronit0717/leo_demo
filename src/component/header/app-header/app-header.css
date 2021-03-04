@@ -1,0 +1,118 @@
+.sidebar {
+    height: 100vh;
+    background: linear-gradient(rgba(1, 77, 77, 0), rgba(1, 77, 77, .2)), url(../../images/prism.png);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    box-shadow: 5px 7px 25px #999;
+}
+
+.app-sidebar-logo img {
+    max-height: 1.2em !important;
+    margin-right: 0.4em;
+}
+
+.group-avatar {
+    max-width:2.2em;
+}
+
+.bottom-border {
+    border-bottom: 1px groove #eee;
+}
+
+.side-bar-font-brand {
+    font-size: 1em
+}
+
+.side-bar-font {
+    font-size: 1.1em;
+}
+
+.sidebar-link {
+    transition: all .4s;
+}
+
+.sidebar-link:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.current {
+    background-color: #008890;
+    border-radius: 7px;
+    box-shadow: 2px 5px 10px #111;
+    transition: all .3s;
+}
+
+.current:hover {
+    background-color: #299aa0;
+    border-radius: 7px;
+    box-shadow: 2px 5px 20px #111;
+    transform: translateY(-1px);
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #008890;
+    transition: all .4s;
+}
+
+.search-input:focus {
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 2px solid #008890;
+}
+
+.td-search-btn {
+    /*
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    */
+    background: #ddd;
+    border-radius: 50%;
+    padding: 10px 16px;
+    height: 38px !important;
+    width: 38px;
+    transition: all .4s;
+}
+
+.td-search-btn:hover {
+    background: #eee;
+    transform: translateY(-1px);
+}
+
+.td-theme {
+    color: #008890
+}
+
+.td-theme-gray {
+    color: #ddd;
+}
+
+.icon-parent {
+    position: relative;
+}
+
+.icon-bullet::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    height: 10px;
+    width: 10px;
+    background-color: #008890;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        height: auto;
+    }
+    
+    .top-navbar {
+        position: static;
+    }
+}

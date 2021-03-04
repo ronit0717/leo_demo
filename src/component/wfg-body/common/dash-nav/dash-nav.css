@@ -1,0 +1,7 @@
+.nav-link-bottom.active {
+    border-bottom: 2px solid #008890 !important;
+}
+
+.nav-link-bottom:hover {
+    border-bottom: 2px solid #dedede;
+}
