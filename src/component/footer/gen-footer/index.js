@@ -45,12 +45,11 @@ class GenFooter extends Component {
                 <div className="single-footer">
                   <div className="footer-title">
                     <img src={wfgLogo} alt="" />
-                    <span className="company-stamp">A <b><a href="https://vinavalabs.com" target="blank">Vinava Labs</a></b> product</span>
+                    <span className="company-stamp">Developed by <b><a href="https://www.linkedin.com/in/ronitc/" target="blank">Ronit Chattopadhyay</a></b></span>
                   </div>
                   <div className="footer-text">
                       <p>
-                          With the vision of Make In India, <a href="https://vinavalabs.com" target="blank">Vinava Labs</a> works on delivering software solutions to increase efficiency of it clients ranging from SMEs, 
-                          MSMEs to startups.
+                          I am a software engineer working <a href="https://www.quikr.com/" target="blank">@Quikr</a>, having over 4 years of experience developing applications and tools in E-Commerce industry.
                       </p>
                   </div>
                   <ul className="footer-social-list">

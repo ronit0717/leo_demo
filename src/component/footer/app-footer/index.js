@@ -18,19 +18,19 @@ class index extends Component {
                                 <div className="col-lg-6 text-center">
                                     <ul className="list-inline">
                                         <li className="list-inline-item mr-2">
-                                            <a href="#" className="text-dark">Wefungo Sales</a>
+                                            <a href="#" className="text-dark">Wefungo Support</a>
                                         </li>
                                         <li className="list-inline-item mr-2">
-                                            <a href="#" className="text-dark">sales@wefungo.com</a>
+                                            <a href="#" className="text-dark">ronit0717@gmail.com</a>
                                         </li>
                                         <li className="list-inline-item mr-2">
-                                            <a href="#" className="text-dark">+91-9988998787</a>
+                                            <a href="#" className="text-dark">+91-8697819787</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="col-lg-6 text-center">
                                     <p>
-                                        &copy; 2021 Copyright. Vinava Labs
+                                        &copy; 2021 Copyright. Ronit Chattopadhyay
                                     </p>
                                 </div>
                             </div>
