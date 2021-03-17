@@ -8,8 +8,8 @@ const DashboardTime = () => {
   const dashMonth = [
     "JAN",
     "FEB",
-    "MARCH",
-    "APRIL",
+    "MAR",
+    "APR",
     "MAY",
     "JUNE",
     "JULY",
