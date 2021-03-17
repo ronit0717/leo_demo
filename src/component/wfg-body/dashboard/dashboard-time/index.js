@@ -53,11 +53,11 @@ const DashboardTime = () => {
   return (
     <div className="row mt-4 mb-4">
       <div className="col-12">
-        <div classNAme="card rounded">
+        <div>
           <div className="card-body">
             <div className="row">
               <div className="col-md-6 col-12 p-2">
-                <div className="card bg-light">
+                <div className="card bg-white">
                   <i className="far fa-calendar-alt fa-8x text-warning d-block m-auto py-3"></i>
                   <div className="card-body">
                     <p className="card-text text-center text-center font-weight-bold text-uppercase">
