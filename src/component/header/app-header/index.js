@@ -1,22 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import "./app-header.css";
 import AppHeaderSidebar from "./sidebar";
-
-const auth_redirects =
-  window.location.protocol +
-  "//" +
-  window.location.hostname +
-  ":" +
-  window.location.port;
-
-  async function signOut() {
-    try {
-      alert("Signout Called");
-    } catch (error) {
-      console.log("error signing out: ", error);
-    }
-  }
 
 const AppHeader = () => {
 
@@ -47,7 +32,7 @@ const AppHeader = () => {
                     <li className="nav-item ml-md-auto">
                       <p
                         className="nav-link text-light align-items-center mb-0"
-                        onClick={() => signOut()}
+                        //onClick={() => signOut()}
                       >
                         Sign Out
                         <i className="fas fa-sign-out-alt td-theme-gray fa-lg ml-2" />

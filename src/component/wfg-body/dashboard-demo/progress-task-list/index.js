@@ -60,12 +60,12 @@ class ProgressTaskList extends Component {
                                 Lorem Ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
                                     <i className="fas fa-edit fa-lg text-success mr-2" />
                                 </a>
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
                                     <i className="fas fa-trash-alt fa-lg text-danger" />
                                 </a>
                             </div>
@@ -78,12 +78,12 @@ class ProgressTaskList extends Component {
                                 Lorem Ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
                                     <i className="fas fa-edit fa-lg text-success mr-2" />
                                 </a>
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
                                     <i className="fas fa-trash-alt fa-lg text-danger" />
                                 </a>
                             </div>
@@ -96,12 +96,12 @@ class ProgressTaskList extends Component {
                                 Lorem Ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
                                     <i className="fas fa-edit fa-lg text-success mr-2" />
                                 </a>
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
                                     <i className="fas fa-trash-alt fa-lg text-danger" />
                                 </a>
                             </div>
@@ -114,12 +114,12 @@ class ProgressTaskList extends Component {
                                 Lorem Ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="<h6>edit</h6>" data-placement="top">
                                     <i className="fas fa-edit fa-lg text-success mr-2" />
                                 </a>
                             </div>
                             <div className="col-1">
-                                <a href="#" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
+                                <a href="/" data-toggle="tooltip" data-html="true" title="delete" data-placement="top">
                                     <i className="fas fa-trash-alt fa-lg text-danger" />
                                 </a>
                             </div>

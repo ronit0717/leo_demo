@@ -25,17 +25,19 @@ const DashboardTime = () => {
     let hour = date.getHours();
     let midday = "AM";
     midday = hour >= 12 ? "PM" : "AM";
-    hour = hour == 0 ? 12 : hour > 12 ? hour - 12 : hour;
+    hour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
     let min = date.getMinutes();
-    let sec = date.getSeconds();
+    //let sec = date.getSeconds();
     hour = updateTime(hour);
     min = updateTime(min);
 
     setTime(hour + " : " + min + " " + midday);
     setDashDate(dashDay[date.getDay()] + ", " + dashMonth[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear());
+    /*
     let t = setTimeout(function() {
       currentTime();
     }, (60 - sec)* 1000);
+    */
   }
 
   function updateTime(k) {
@@ -48,7 +50,7 @@ const DashboardTime = () => {
 
   useEffect(() => {
     currentTime();
-  }, []);
+  });
 
   return (
     <div className="row mt-4 mb-4">

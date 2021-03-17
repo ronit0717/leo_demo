@@ -28,13 +28,18 @@ const AppHeaderSidebar = ({ displayName }) => {
       name: "Profile",
       link: "/app/user",
       logo: "fa fa-user"
+    },
+    {
+      name: "Client",
+      link: "/app/client",
+      logo: "fa fa-users"
     }
   ]);
 
   return (
     <div className="col-lg-2 col-md-4 sidebar fixed-top">
       <a
-        href="#"
+        href="/"
         className="navbar-brand text-white d-block mx-auto 
                                 text-center py-3 mb-4 bottom-border app-sidebar-logo bottom-border"
       >
@@ -48,7 +53,7 @@ const AppHeaderSidebar = ({ displayName }) => {
       <ul className="navbar-nav flex-column mt-3">
         {navList &&
           navList.map(nav => (
-            <li className="nav-item">
+            <li className="nav-item" key={nav.name}>
               <NavLink
                 to={nav.link}
                 className="nav-link text-white p-3 mb-2 sidebar-link"

@@ -94,19 +94,19 @@ class ActivitiesQuickPost extends Component {
                             <h5 className="text-muted text-center mb-4">Quick Status Post</h5>
                             <ul className="list-inline text-center py-3">
                                 <li className="list-inline-item mr-4">
-                                    <a href="#">
+                                    <a href="/">
                                         <li className="fas fa-pencil-alt text-success"></li>
                                         <span className="h6 text-muted">Status</span>
                                     </a>
                                 </li>
                                 <li className="list-inline-item mr-4">
-                                    <a href="#">
+                                    <a href="/">
                                         <li className="fas fa-camera text-info"></li>
                                         <span className="h6 text-muted">Photo</span>
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#">
+                                    <a href="/">
                                         <li className="fas fa-map-marker-alt text-primary"></li>
                                         <span className="h6 text-muted">Check-in</span>
                                     </a>

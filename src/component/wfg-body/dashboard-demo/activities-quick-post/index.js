@@ -12,7 +12,7 @@ class ActivitiesQuickPost extends Component {
                         <div className="card">
                             <div className="card-header">
                                 <span className="btn-block bg-secondary text-light text-left" data-toggle="collapse" data-target="#collapse-1">
-                                    <img src="https://placeimg.com/150/150/people" width="50" className="mr-3 rounded p-2" />
+                                    <img src="https://placeimg.com/150/150/people" alt="random people" width="50" className="mr-3 rounded p-2" />
                                     John posted a new comment
                                 </span>
                             </div>
@@ -27,7 +27,7 @@ class ActivitiesQuickPost extends Component {
                         <div className="card">
                             <div className="card-header">
                                 <span className="btn-block bg-secondary text-light text-left rounded" data-toggle="collapse" data-target="#collapse-2">
-                                    <img src="https://placeimg.com/160/160/people" width="50" className="mr-3 rounded p-2" />
+                                    <img src="https://placeimg.com/160/160/people" alt="random people" width="50" className="mr-3 rounded p-2" />
                                     Mark posted a new comment
                                 </span>
                             </div>
@@ -42,7 +42,7 @@ class ActivitiesQuickPost extends Component {
                         <div className="card">
                             <div className="card-header">
                                 <span className="btn-block bg-secondary text-light text-left rounded" data-toggle="collapse" data-target="#collapse-3">
-                                    <img src="https://placeimg.com/170/170/people" width="50" className="mr-3 rounded p-2" />
+                                    <img src="https://placeimg.com/170/170/people" alt="random people" width="50" className="mr-3 rounded p-2" />
                                     Rupert posted a new comment
                                 </span>
                             </div>
@@ -57,7 +57,7 @@ class ActivitiesQuickPost extends Component {
                         <div className="card">
                             <div className="card-header">
                                 <span className="btn-block bg-secondary text-light text-left rounded" data-toggle="collapse" data-target="#collapse-4">
-                                    <img src="https://placeimg.com/180/180/people" width="50" className="mr-3 rounded p-2" />
+                                    <img src="https://placeimg.com/180/180/people" alt="random people" width="50" className="mr-3 rounded p-2" />
                                     Monica posted a new comment
                                 </span>
                             </div>
@@ -72,7 +72,7 @@ class ActivitiesQuickPost extends Component {
                         <div className="card">
                             <div className="card-header">
                                 <span className="btn-block bg-secondary text-light text-left rounded" data-toggle="collapse" data-target="#collapse-5">
-                                    <img src="https://placeimg.com/190/190/people" width="50" className="mr-3 rounded p-2" />
+                                    <img src="https://placeimg.com/190/190/people" alt="random people" width="50" className="mr-3 rounded p-2" />
                                     Bob posted a new comment
                                 </span>
                             </div>
@@ -94,19 +94,19 @@ class ActivitiesQuickPost extends Component {
                             <h5 className="text-muted text-center mb-4">Quick Status Post</h5>
                             <ul className="list-inline text-center py-3">
                                 <li className="list-inline-item mr-4">
-                                    <a href="#">
+                                    <a href="/">
                                         <li className="fas fa-pencil-alt text-success"></li>
                                         <span className="h6 text-muted">Status</span>
                                     </a>
                                 </li>
                                 <li className="list-inline-item mr-4">
-                                    <a href="#">
+                                    <a href="/">
                                         <li className="fas fa-camera text-info"></li>
                                         <span className="h6 text-muted">Photo</span>
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#">
+                                    <a href="/">
                                         <li className="fas fa-map-marker-alt text-primary"></li>
                                         <span className="h6 text-muted">Check-in</span>
                                     </a>
