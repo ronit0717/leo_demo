@@ -45,6 +45,19 @@ const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
                   {client.slug}
                 </span>
               ) : null}
+              {client.active ? (
+                <span
+                  className="text-light badge badge-success p-1 mr-2"
+                >
+                  Active
+                </span>
+              ) : (
+                <span
+                  className="text-light badge badge-danger p-1 mr-2"
+                >
+                  In Active
+                </span>
+              )}
             </div>
           </div>
         ))}
