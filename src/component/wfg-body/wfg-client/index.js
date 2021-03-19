@@ -21,7 +21,11 @@ const WfhClient = () => {
                 />
               </div>
               <div className="col-md-6">
-                <ClientCreateEdit />
+                <ClientCreateEdit
+                  clients={clients}
+                  setClients={setClients}
+                  selectedClient={selectedClient}
+                />
               </div>
             </div>
           </div>

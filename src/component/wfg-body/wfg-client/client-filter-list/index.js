@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import axios from 'axios';
 
 import { textTruncate } from "../../../utils"
 
@@ -10,14 +11,16 @@ const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
   async function getData() {
     console.log("Get Data called");
     const apiUrl = "http://localhost:5555/pofo/client";
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => setClients(data));
+    axios.get(apiUrl).then((response) => {
+      console.log(response);
+      const data = response.data;
+      setClients(data);
+    })
   }
 
   return (
     <div className="container-fluid mt-3 mb-5">
-      {/* Product List */}
+      {/* Client List */}
       {clients == null || clients.length === 0 ? (
         <div className="text-muted text-center">No more clients</div>
       ) : null}
