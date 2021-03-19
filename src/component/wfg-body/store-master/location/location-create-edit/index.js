@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from "react";
-import axios from "axios";
+import { doPost, doPut } from "../../../../utils/http-utils"
 
 const initialState = {
   id: null,
@@ -63,8 +63,7 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
         l_successMessage = "Location successfully created";
         const createLocation = createUpdateLocation;
         console.log("Create location", createLocation);
-        axios
-          .post("http://localhost:5555/pofo/location", createLocation, config)
+        doPost("location", createLocation, true)
           .then(
             response => {
               console.log(response);
@@ -80,10 +79,8 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
         l_successMessage = "Location successfully updated";
         createUpdateLocation.id = state.id;
         const updateLocation = createUpdateLocation;
-        const updateUrl =
-          "http://localhost:5555/pofo/location/" + createUpdateLocation.id;
-        console.log("UpdateUrl", updateUrl);
-        axios.put(updateUrl, updateLocation, config).then(
+        
+        doPut("location", createUpdateLocation.id, updateLocation, true).then(
           response => {
             console.log(response);
             //updating the product in productsList
@@ -206,15 +203,14 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="name">Description</label>
-                <input
-                  type="text"
+                <label for="description">Description</label>
+                <textarea
+                  rows="2"
                   name="description"
-                  required
                   id="description"
+                  className="form-control"
                   onChange={onChange}
                   value={state.description}
-                  className="form-control form-control-sm"
                 />
               </div>
               <div className="form-group">
@@ -226,7 +222,7 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
                   }
                   onClick={fnCreateUpdateLocation}
                 >
-                  {state.operation && state.operation == "NEW"
+                  {state.operation && state.operation === "NEW"
                     ? "Create"
                     : "Update"}
                 </button>

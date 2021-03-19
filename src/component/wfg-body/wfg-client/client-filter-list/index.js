@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import axios from 'axios';
 
-import { textTruncate } from "../../../utils"
+import { textTruncate } from "../../../utils";
+import { doGet } from "../../../utils/http-utils";
 
 const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
   useEffect(() => {
@@ -10,12 +10,15 @@ const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
 
   async function getData() {
     console.log("Get Data called");
-    const apiUrl = "http://localhost:5555/pofo/client";
-    axios.get(apiUrl).then((response) => {
-      console.log(response);
-      const data = response.data;
-      setClients(data);
-    })
+    doGet("client", false).then(
+      response => {
+        setClients(response.data);
+      },
+      error => {
+        console.log(error);
+        alert("Something went wrong :( Please refresh the page");
+      }
+    );
   }
 
   return (
@@ -42,22 +45,16 @@ const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
             </div>
             <div className="col-6 text-right h6">
               {client.slug ? (
-                <span
-                  className="text-light badge badge-warning p-1 mr-2 text-uppercase"
-                >
+                <span className="text-light badge badge-warning p-1 mr-2 text-uppercase">
                   {client.slug}
                 </span>
               ) : null}
               {client.active ? (
-                <span
-                  className="text-light badge badge-success p-1 mr-2"
-                >
+                <span className="text-light badge badge-success p-1 mr-2">
                   Active
                 </span>
               ) : (
-                <span
-                  className="text-light badge badge-danger p-1 mr-2"
-                >
+                <span className="text-light badge badge-danger p-1 mr-2">
                   In Active
                 </span>
               )}
