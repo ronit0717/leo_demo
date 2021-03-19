@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { textTruncate } from "../../../../utils";
 import { doGet } from "../../../../utils/http-utils";
 
-const LocationFilterList = ({ locations, setLocations, setSelectedLocation }) => {
+const LocationFilterList = ({ locations, setLocations, setSelectedLocation, headerRefresh }) => {
   useEffect(() => {
     getData();
   }, []);

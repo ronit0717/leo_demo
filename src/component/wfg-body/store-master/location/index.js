@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import LocationFilterList from "./location-filter-list";
 import LocationCreateEdit from "./location-create-edit";
 
-const Location = () => {
+const Location = ({ headerRefresh, setHeaderRefresh }) => {
   const [locations, setLocations] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
@@ -14,6 +14,7 @@ const Location = () => {
           locations={locations}
           setLocations={setLocations}
           setSelectedLocation={setSelectedLocation}
+          headerRefresh={headerRefresh}
         />
       </div>
       <div className="col-md-6 col-12">
@@ -21,6 +22,8 @@ const Location = () => {
           locations={locations}
           setLocations={setLocations}
           selectedLocation={selectedLocation}
+          headerRefresh={headerRefresh}
+          setHeaderRefresh={setHeaderRefresh}
         />
       </div>
     </>

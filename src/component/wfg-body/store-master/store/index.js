@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import StoreFilterList from "./store-filter-list";
 import StoreCreateEdit from "./store-create-edit";
 
-const Store = () => {
+const Store = ({ headerLocationId, headerRefresh, setHeaderRefresh }) => {
   const [stores, setStores] = useState([]);
   const [selectedStore, setSelectedStore] = useState(null);
 
@@ -14,7 +14,7 @@ const Store = () => {
           stores={stores}
           setStores={setStores}
           setSelectedStore={setSelectedStore}
-          headerLocationId={1}
+          headerLocationId={headerLocationId}
         />
       </div>
       <div className="col-md-6 col-12">
@@ -22,7 +22,9 @@ const Store = () => {
           stores={stores}
           setStores={setStores}
           selectedStore={selectedStore}
-          headerLocationId={1}
+          headerLocationId={headerLocationId}
+          headerRefresh={headerRefresh}
+          setHeaderRefresh={setHeaderRefresh}
         />
       </div>
     </>

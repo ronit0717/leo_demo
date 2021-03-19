@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from "react";
-import { doPost, doPut } from "../../../../utils/http-utils"
+import { doPost, doPut } from "../../../../utils/http-utils";
 
 const initialState = {
   id: null,
@@ -23,7 +23,13 @@ function reducer(state, action) {
   }
 }
 
-const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
+const LocationCreateEdit = ({
+  locations,
+  setLocations,
+  selectedLocation,
+  headerRefresh,
+  setHeaderRefresh
+}) => {
   l_initState = initialState;
   const [state, dispatch] = useReducer(reducer, l_initState);
 
@@ -58,23 +64,26 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
         l_successMessage = "Location successfully created";
         const createLocation = createUpdateLocation;
         console.log("Create location", createLocation);
-        doPost("location", createLocation, true)
-          .then(
-            response => {
-              console.log(response);
-              newLocations = [response.data, ...locations];
-            },
-            error => {
-              console.log(error);
-              alert("Something went wrong :( Please refresh the page");
-              return;
-            }
-          );
+        doPost("location", createLocation, true).then(
+          response => {
+            console.log(response);
+            newLocations = [response.data, ...locations];
+            setLocations(newLocations);
+            dispatch({ type: "CLEAR_INPUT" });
+            alert(l_successMessage);
+            setHeaderRefresh(!headerRefresh);
+          },
+          error => {
+            console.log(error);
+            alert("Something went wrong :( Please refresh the page");
+            return;
+          }
+        );
       } else if (state.operation != null && state.operation === "UPDATE") {
         l_successMessage = "Location successfully updated";
         createUpdateLocation.id = state.id;
         const updateLocation = createUpdateLocation;
-        
+
         doPut("location", createUpdateLocation.id, updateLocation, true).then(
           response => {
             console.log(response);
@@ -92,6 +101,10 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
               locations[index] = response.data;
               newLocations = [...locations];
             }
+            setLocations(newLocations);
+            dispatch({ type: "CLEAR_INPUT" });
+            alert(l_successMessage);
+            setHeaderRefresh(!headerRefresh);
           },
           error => {
             console.log(error);
@@ -103,10 +116,6 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
         alert("Something went wrong :( Please refresh the page");
         return;
       }
-      setLocations(newLocations);
-      dispatch({ type: "CLEAR_INPUT" });
-      alert(l_successMessage);
-      //setHeaderRefresh(!headerRefresh);
     } catch (err) {
       console.log("error creating location...", err);
       alert("Some error occured");

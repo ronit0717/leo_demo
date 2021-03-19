@@ -6,7 +6,11 @@ import DashNav from "../common/dash-nav";
 import Store from "./store";
 import Location from "./location";
 
-const StoreMaster = () => {
+const StoreMaster = ({
+  headerLocationId,
+  headerRefresh,
+  setHeaderRefresh
+}) => {
   const [navList] = useState([
     {
       name: "Store",
@@ -29,10 +33,17 @@ const StoreMaster = () => {
               </div>
               <Switch>
                 <Route path="*/location">
-                  <Location />
+                  <Location
+                    headerRefresh={headerRefresh}
+                    setHeaderRefresh={setHeaderRefresh}
+                  />
                 </Route>
                 <Route>
-                  <Store />
+                  <Store
+                    headerLocationId={headerLocationId}
+                    headerRefresh={headerRefresh}
+                    setHeaderRefresh={setHeaderRefresh}
+                  />
                 </Route>
               </Switch>
             </div>

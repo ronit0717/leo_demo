@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from "react";
-import { doPost, doPut } from "../../../../utils/http-utils"
+import { doPost, doPut } from "../../../../utils/http-utils";
 
 const initialState = {
   id: null,
@@ -24,7 +24,14 @@ function reducer(state, action) {
   }
 }
 
-const StoreCreateEdit = ({ stores, setStores, selectedStore, headerLocationId }) => {
+const StoreCreateEdit = ({
+  stores,
+  setStores,
+  selectedStore,
+  headerLocationId,
+  headerRefresh,
+  setHeaderRefresh
+}) => {
   l_initState = initialState;
   const [state, dispatch] = useReducer(reducer, l_initState);
 
@@ -61,23 +68,28 @@ const StoreCreateEdit = ({ stores, setStores, selectedStore, headerLocationId })
         l_successMessage = "Store successfully created";
         const createStore = createUpdateStore;
         console.log("Create store", createStore);
-        doPost("store", createStore, true)
-          .then(
-            response => {
-              console.log(response);
-              newStores = [response.data, ...stores];
-            },
-            error => {
-              console.log(error);
-              alert("Something went wrong :( Please refresh the page");
-              return;
-            }
-          );
+        doPost("store", createStore, true).then(
+          response => {
+            console.log("New Store:", response.data);
+            console.log("Stores", stores);
+            newStores = [response.data, ...stores];
+            console.log("New Stores:", newStores);
+            setStores(newStores);
+            dispatch({ type: "CLEAR_INPUT" });
+            alert(l_successMessage);
+            setHeaderRefresh(!headerRefresh);
+          },
+          error => {
+            console.log(error);
+            alert("Something went wrong :( Please refresh the page");
+            return;
+          }
+        );
       } else if (state.operation != null && state.operation === "UPDATE") {
         l_successMessage = "Store successfully updated";
         createUpdateStore.id = state.id;
         const updateStore = createUpdateStore;
-        
+
         doPut("store", createUpdateStore.id, updateStore, true).then(
           response => {
             console.log(response);
@@ -95,6 +107,10 @@ const StoreCreateEdit = ({ stores, setStores, selectedStore, headerLocationId })
               stores[index] = response.data;
               newStores = [...stores];
             }
+            setStores(newStores);
+            dispatch({ type: "CLEAR_INPUT" });
+            alert(l_successMessage);
+            setHeaderRefresh(!headerRefresh);
           },
           error => {
             console.log(error);
@@ -106,10 +122,6 @@ const StoreCreateEdit = ({ stores, setStores, selectedStore, headerLocationId })
         alert("Something went wrong :( Please refresh the page");
         return;
       }
-      setStores(newStores);
-      dispatch({ type: "CLEAR_INPUT" });
-      alert(l_successMessage);
-      //setHeaderRefresh(!headerRefresh);
     } catch (err) {
       console.log("error creating store...", err);
       alert("Some error occured");

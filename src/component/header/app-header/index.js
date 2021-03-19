@@ -27,7 +27,6 @@ const AppHeader = ({
     let headerLocation = null;
     for (let i = 0; i < locations.length; i++) {
       if (locations[i].id == headerLocationId) {
-        console.log("RC 2");
         headerLocation = locations[i];
         break;
       }

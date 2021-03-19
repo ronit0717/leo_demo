@@ -6,7 +6,7 @@ import { doGet } from "../../../../utils/http-utils";
 const StoreFilterList = ({ stores, setStores, setSelectedStore, headerLocationId }) => {
   useEffect(() => {
     getData();
-  }, []);
+  }, [headerLocationId]);
 
   async function getData() {
     console.log("Get Data called");
