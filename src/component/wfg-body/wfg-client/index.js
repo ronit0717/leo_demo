@@ -9,7 +9,7 @@ const WfhClient = () => {
 
   return (
     <section>
-      <div className="container-fluid my-lg-5">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-lg-10 col-md-8 ml-auto">
             <div className="row pt-md-5 mt-md-3 mb-5 align-items-center">

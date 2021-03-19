@@ -21,7 +21,7 @@ const AppHeaderSidebar = ({ displayName }) => {
     },
     {
       name: "Store",
-      link: "/app/group",
+      link: "/app/store",
       logo: "fas fa-store"
     },
     {

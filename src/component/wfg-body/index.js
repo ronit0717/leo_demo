@@ -6,6 +6,7 @@ import "./wfg-body.css";
 import DashboardDemo from "./dashboard-demo";
 import Dashboard from "./dashboard";
 import Client from "./wfg-client";
+import StoreMaster from "./store-master";
 import AppHeader from "../header/app-header";
 import AppFooter from "../footer/app-footer";
 
@@ -18,6 +19,7 @@ const WfgBody = () => {
             <Route path={`/app/dashboard`} component={Dashboard} />
             <Route path={`/app/demo`} component={DashboardDemo} />
             <Route path={`/app/client`} component={Client} />
+            <Route path={`/app/store`} component={StoreMaster} />
             <Redirect exact path="/app" to="/app/dashboard" />
         </Switch>
         <AppFooter />
