@@ -10,7 +10,7 @@ const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
 
   async function getData() {
     console.log("Get Data called");
-    doGet("client", false).then(
+    doGet("client", null, false).then(
       response => {
         setClients(response.data);
       },

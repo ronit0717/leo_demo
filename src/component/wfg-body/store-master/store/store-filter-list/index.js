@@ -3,16 +3,19 @@ import React, { useEffect } from "react";
 import { textTruncate } from "../../../../utils";
 import { doGet } from "../../../../utils/http-utils";
 
-const LocationFilterList = ({ locations, setLocations, setSelectedLocation }) => {
+const StoreFilterList = ({ stores, setStores, setSelectedStore, headerLocationId }) => {
   useEffect(() => {
     getData();
   }, []);
 
   async function getData() {
     console.log("Get Data called");
-    doGet("location", null, true).then(
+    const params = {
+        "location_id" : headerLocationId
+    }
+    doGet("store", params, true).then(
       response => {
-        setLocations(response.data);
+        setStores(response.data);
       },
       error => {
         console.log(error);
@@ -24,30 +27,30 @@ const LocationFilterList = ({ locations, setLocations, setSelectedLocation }) =>
 
   return (
     <div className="container-fluid mt-3 mb-5">
-      {/* Location List */}
-      {locations == null || locations.length === 0 ? (
-        <div className="text-muted text-center">No more locations</div>
+      {/* Store List */}
+      {stores == null || stores.length === 0 ? (
+        <div className="text-muted text-center">No more stores</div>
       ) : null}
-      {locations &&
-        locations.map(location => (
+      {stores &&
+        stores.map(store => (
           <div
             className="row py-2 mb-2 task-border bg-white shadow"
-            key={location.id}
-            onClick={() => setSelectedLocation(location)}
+            key={store.id}
+            onClick={() => setSelectedStore(store)}
           >
             <div
               className="col-6 h6"
               data-toggle="tooltip"
               data-html="true"
-              title={location.name}
+              title={store.name}
               data-placement="top"
             >
-              {textTruncate(location.name, 30)}
+              {textTruncate(store.name, 30)}
             </div>
             <div className="col-6 text-right h6">
-              {location.pincode ? (
+              {store.gstin ? (
                 <span className="text-light badge badge-warning p-1 mr-2 text-uppercase">
-                  pincode: {location.pincode}
+                  GSTIN: {store.gstin}
                 </span>
               ) : null}
             </div>
@@ -57,4 +60,4 @@ const LocationFilterList = ({ locations, setLocations, setSelectedLocation }) =>
   );
 };
 
-export default LocationFilterList;
+export default StoreFilterList;
