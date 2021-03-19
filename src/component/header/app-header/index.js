@@ -1,9 +1,80 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import { doGet } from "../../utils/http-utils";
 
 import "./app-header.css";
 import AppHeaderSidebar from "./sidebar";
 
-const AppHeader = () => {
+const AppHeader = ({
+  headerLocationId,
+  setHeaderLocationId,
+  headerStoreId,
+  setHeaderStoreId,
+  headerRefresh
+}) => {
+  const [locations, setLocations] = useState([]);
+  const [stores, setStores] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, [headerRefresh]);
+
+  useEffect(() => {
+    resetStore();
+  }, [headerLocationId, locations]);
+
+  async function resetStore() {
+    let headerLocation = null;
+    for (let i = 0; i < locations.length; i++) {
+      if (locations[i].id == headerLocationId) {
+        console.log("RC 2");
+        headerLocation = locations[i];
+        break;
+      }
+    }
+    if (headerLocation && headerLocation.stores && headerLocation.stores.length > 0) {
+      setHeaderStoreId(headerLocation.stores[0].id);
+      setStores(headerLocation.stores);
+    } else {
+      setHeaderStoreId(null);
+      setStores([]);
+    }
+  }
+
+  async function getData() {
+    setHeaderLocationId(headerLocationId ? headerLocationId : null);
+    setHeaderStoreId(headerStoreId ? headerStoreId : null);
+    try {
+      doGet("location", null, true).then(
+        response => {
+          const locationData = response.data;
+          console.log(locationData);
+          setLocations(locationData);
+          if (locationData && locationData.length > 0) {
+            let headerLocation = locationData[0];
+            setHeaderLocationId(
+              headerLocationId ? headerLocationId : headerLocation.id
+            );
+          }
+        },
+        error => {
+          console.log(error);
+          alert("Something went wrong :( Please refresh the page");
+          return;
+        }
+      );
+    } catch (err) {
+      console.log("error fetching locations...", err);
+    }
+  }
+
+  function onChange(e) {
+    if (e.target.name == "headerLocation") {
+      setHeaderLocationId(e.target.value);
+    } else if (e.target.name == "headerStore") {
+      setHeaderStoreId(e.target.value);
+    }
+  }
 
   return (
     <nav className="navbar navbar-expand-md navbar-light">
@@ -24,10 +95,35 @@ const AppHeader = () => {
             {/* top navbar */}
             <div className="col-lg-10 col-md-8 ml-auto bg-dark fixed-top top-navbar">
               <div className="row align-items-center">
-                <div className="col-md-7 align-items-center text-light">
-                  Dashboard
+              <div className="col-md-5">
+                  <select
+                    name="headerLocation"
+                    id="category"
+                    className="form-control form-control-sm bg-dark text-light"
+                    value={headerLocationId}
+                    onChange={onChange}
+                  >
+                    {locations &&
+                      locations.map(location => (
+                        <option value={location.id}>{location.name}</option>
+                      ))}
+                  </select>
                 </div>
-                <div className="col-md-5 text-right align-items-center">
+                <div className="col-md-5">
+                  <select
+                    name="headerStore"
+                    id="category"
+                    className="form-control form-control-sm bg-dark text-light"
+                    value={headerStoreId}
+                    onChange={onChange}
+                  >
+                    {stores &&
+                      stores.map(store => (
+                        <option value={store.id}>{store.name}</option>
+                      ))}
+                  </select>
+                </div>
+                <div className="col-md-2 text-right align-items-center">
                   <ul className="navbar-nav">
                     <li className="nav-item ml-md-auto">
                       <p

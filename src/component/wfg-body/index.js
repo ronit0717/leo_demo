@@ -1,27 +1,29 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React, { useState } from "react";
 import "./wfg-body.css";
 
 //components
-import DashboardDemo from "./dashboard-demo";
-import Dashboard from "./dashboard";
-import Client from "./wfg-client";
-import StoreMaster from "./store-master";
 import AppHeader from "../header/app-header";
 import AppFooter from "../footer/app-footer";
+import Body from "./body"
 
 const WfgBody = () => {
+  const [headerLocationId, setHeaderLocationId] = useState(null);
+  const [headerStoreId, setHeaderStoreId] = useState(null);
+  const [headerRefresh, setHeaderRefresh] = useState(false);
   return (
     <div>
       <>
-        <AppHeader />
-        <Switch>
-            <Route path={`/app/dashboard`} component={Dashboard} />
-            <Route path={`/app/demo`} component={DashboardDemo} />
-            <Route path={`/app/client`} component={Client} />
-            <Route path={`/app/store`} component={StoreMaster} />
-            <Redirect exact path="/app" to="/app/dashboard" />
-        </Switch>
+        <AppHeader headerLocationId={headerLocationId}
+          setHeaderLocationId={setHeaderLocationId}
+          headerStoreId={headerStoreId}
+          setHeaderStoreId={setHeaderStoreId}
+          headerRefresh={headerRefresh} />
+        <Body
+          headerLocationId={headerLocationId}
+          headerStoreId={headerStoreId}
+          headerRefresh={headerRefresh}
+          setHeaderRefresh={setHeaderRefresh}
+        />
         <AppFooter />
       </>
     </div>
