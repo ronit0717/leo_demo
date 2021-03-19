@@ -54,11 +54,6 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
     try {
       let l_successMessage = null;
       let newLocations = null;
-      let config = {
-        headers: {
-          "X-Pofo-Client-Id": 1
-        }
-      };
       if (state.operation != null && state.operation === "NEW") {
         l_successMessage = "Location successfully created";
         const createLocation = createUpdateLocation;
@@ -83,7 +78,7 @@ const LocationCreateEdit = ({ locations, setLocations, selectedLocation }) => {
         doPut("location", createUpdateLocation.id, updateLocation, true).then(
           response => {
             console.log(response);
-            //updating the product in productsList
+            //updating the location in locationList
             let index = null;
             for (let i = 0; i < locations.length; i++) {
               if (response.data.id === locations[i].id) {

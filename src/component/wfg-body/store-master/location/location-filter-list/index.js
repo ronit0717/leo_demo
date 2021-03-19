@@ -16,6 +16,7 @@ const LocationFilterList = ({ locations, setLocations, setSelectedLocation }) =>
       },
       error => {
         console.log(error);
+        alert(error);
         alert("Something went wrong :( Please refresh the page");
       }
     );

@@ -24,6 +24,11 @@ export const doGetById = (controller, id, sendClientInfo) => {
   return axios.get(getUrl, getConfig(sendClientInfo));
 };
 
+export const doDelete = (controller, id, sendClientInfo) => {
+    const deleteUrl = POFO_URL + controller + "/" + id;
+    return axios.delete(deleteUrl, getConfig(sendClientInfo));
+  };
+
 export const doPost = (controller, body, sendClientInfo) => {
   const postUrl = POFO_URL + controller;
   return axios.post(postUrl, body, getConfig(sendClientInfo));
