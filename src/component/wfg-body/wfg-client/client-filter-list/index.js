@@ -25,7 +25,7 @@ const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
     <div className="container-fluid mt-3 mb-5">
       {/* Client List */}
       {clients == null || clients.length === 0 ? (
-        <div className="text-muted text-center">No more clients</div>
+        <div className="text-muted text-center">No Clients</div>
       ) : null}
       {clients &&
         clients.map(client => (

@@ -5,6 +5,7 @@ import DashboardDemo from "../dashboard-demo";
 import Dashboard from "../dashboard";
 import Client from "../wfg-client";
 import StoreMaster from "../store-master";
+import Inventory from "../inventory";
 
 const Body = ({
   headerLocationId,
@@ -23,6 +24,9 @@ const Body = ({
           headerRefresh={headerRefresh}
           setHeaderRefresh={setHeaderRefresh}
         />
+      </Route>
+      <Route path={`/app/inventory`}>
+        <Inventory headerStoreId={headerStoreId} />
       </Route>
       <Redirect exact path="/app" to="/app/dashboard" />
     </Switch>

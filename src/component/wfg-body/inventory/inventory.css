@@ -1,0 +1,19 @@
+.removable {
+    transition: all 0.4s;
+  }
+  
+  .removable:hover {
+    background-color: red !important;
+  }
+  
+  .removable:hover::before {
+    content: "x";
+    color: red;
+    font-weight: 300;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0 4px;
+    margin-right: 2px;
+  }
+  

@@ -29,7 +29,7 @@ const StoreFilterList = ({ stores, setStores, setSelectedStore, headerLocationId
     <div className="container-fluid mt-3 mb-5">
       {/* Store List */}
       {stores == null || stores.length === 0 ? (
-        <div className="text-muted text-center">No more stores</div>
+        <div className="text-muted text-center">No Stores</div>
       ) : null}
       {stores &&
         stores.map(store => (

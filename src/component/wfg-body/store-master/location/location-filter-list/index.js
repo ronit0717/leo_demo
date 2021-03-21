@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { textTruncate } from "../../../../utils";
 import { doGet } from "../../../../utils/http-utils";
 
-const LocationFilterList = ({ locations, setLocations, setSelectedLocation, headerRefresh }) => {
+const LocationFilterList = ({ locations, setLocations, setSelectedLocation }) => {
   useEffect(() => {
     getData();
   }, []);
@@ -26,7 +26,7 @@ const LocationFilterList = ({ locations, setLocations, setSelectedLocation, head
     <div className="container-fluid mt-3 mb-5">
       {/* Location List */}
       {locations == null || locations.length === 0 ? (
-        <div className="text-muted text-center">No more locations</div>
+        <div className="text-muted text-center">No locations</div>
       ) : null}
       {locations &&
         locations.map(location => (

@@ -14,7 +14,6 @@ const Location = ({ headerRefresh, setHeaderRefresh }) => {
           locations={locations}
           setLocations={setLocations}
           setSelectedLocation={setSelectedLocation}
-          headerRefresh={headerRefresh}
         />
       </div>
       <div className="col-md-6 col-12">
