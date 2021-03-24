@@ -24,7 +24,7 @@ function reducer(state, action) {
 function FetchInventoryCategory({ setCategories }) {
   useEffect(() => {
     getData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function getData() {
     try {
@@ -51,7 +51,7 @@ function InventoryCategory({ setCategories }) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function getData() {
     try {

@@ -23,7 +23,7 @@ function reducer(state, action) {
 function FetchInventoryBrand({ setBrands }) {
   useEffect(() => {
     getData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function getData() {
     try {
@@ -50,7 +50,7 @@ function InventoryBrand({ setBrands }) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function getData() {
     try {

@@ -6,10 +6,10 @@ import { doGet } from "../../../../utils/http-utils";
 const ProductFilterList = ({ brands, categories, products, setProducts, setSelectedProduct }) => {
   useEffect(() => {
     getData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function getData() {
-    console.log("Get Data called");
+    console.log("Get Data called..product");
     doGet("product", null, true).then(
       response => {
         setProducts(response.data);

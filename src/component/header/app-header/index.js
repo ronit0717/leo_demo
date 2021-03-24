@@ -21,7 +21,7 @@ const AppHeader = ({
 
   useEffect(() => {
     resetStore();
-  }, [headerLocationId, locations]);
+  }, [headerLocationId, locations]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function resetStore() {
     let headerLocation = null;

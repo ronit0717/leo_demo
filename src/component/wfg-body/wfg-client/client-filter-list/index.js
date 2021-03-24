@@ -6,7 +6,7 @@ import { doGet } from "../../../utils/http-utils";
 const ClientFilterList = ({ clients, setClients, setSelectedClient }) => {
   useEffect(() => {
     getData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function getData() {
     console.log("Get Data called");
