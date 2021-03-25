@@ -32,20 +32,22 @@ function StockView({ selectedProduct, storeId }) {
     console.log("Selected product : ", selectedProduct);
     try {
       const params = {
-        "store_id" : storeId,
-        "product_id" : selectedProduct.id
+        store_id: storeId,
+        product_id: selectedProduct.id
       };
       doGet("stock/store", params, true).then(
-          response => {
-            const stockData = response.data;
-            console.log("Stock data", stockData);
-            setPriceFields(stockData ? stockData : null);
-            setStock(stockData ? stockData : null);
-          },
-          error => {
-
-          }
-      )
+        response => {
+          const stockData = response.data;
+          console.log("Stock data", stockData);
+          setPriceFields(stockData ? stockData : null);
+          setStock(stockData ? stockData : null);
+        },
+        error => {
+          console.log(error);
+          alert("Something went wrong :( Please refresh the page");
+          return;
+        }
+      );
     } catch (err) {
       console.log("error fetching categories...", err);
     }
