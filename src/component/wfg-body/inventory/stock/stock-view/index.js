@@ -112,7 +112,7 @@ function StockView({ selectedProduct, storeId }) {
             <div className="col-4 text-muted">Quantity</div>
             <div className="col-1 text-muted">:</div>
             <div className="col-7 text-muted">
-              {stock.quantity ? stock.quantity : "NA"}
+              {!isNaN(parseFloat(stock.quantity)) ? stock.quantity : "NA"}
             </div>
           </div>
           <div className="row py-2 align-items-center rounded">

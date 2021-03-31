@@ -7598,6 +7598,11 @@
   "resolved" "https://registry.npmjs.org/node-forge/-/node-forge-0.10.0.tgz"
   "version" "0.10.0"
 
+"node-fpe@^2.0.1":
+  "integrity" "sha512-ZfVs+qPYm/nba7ZC0hwGtt31QM80J5SZs2LB1sZ0ncZa1zrX/MUsV4OIKm2GZjP+CytaTxgLzoGzcrhxKmn4Sg=="
+  "resolved" "https://registry.npmjs.org/node-fpe/-/node-fpe-2.0.1.tgz"
+  "version" "2.0.1"
+
 "node-int64@^0.4.0":
   "integrity" "sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs="
   "resolved" "https://registry.npmjs.org/node-int64/-/node-int64-0.4.0.tgz"
@@ -7904,6 +7909,13 @@
     "prelude-ls" "^1.2.1"
     "type-check" "^0.4.0"
     "word-wrap" "^1.2.3"
+
+"order-id@^2.1.1":
+  "integrity" "sha512-iYOm4s2xuTZzO5ff/5SI64aZHbNUZAADqk2HW/MKXZXUnlB3COBmlnS04+nZ34lIaC790eW9+oGZg0sbEf5eBw=="
+  "resolved" "https://registry.npmjs.org/order-id/-/order-id-2.1.1.tgz"
+  "version" "2.1.1"
+  dependencies:
+    "node-fpe" "^2.0.1"
 
 "original@^1.0.0":
   "integrity" "sha512-hyBVl6iqqUOJ8FqRe+l/gS8H+kKYjrEndd5Pm1MfBtsEKA038HkkdbAl/72EAXGyonD/PFsvmVG+EvcIpliMBg=="

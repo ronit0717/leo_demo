@@ -24,6 +24,7 @@ const AppHeaderSidebar = ({ displayName }) => {
       link: "/app/store",
       logo: "fas fa-store"
     },
+    /*
     {
       name: "Profile",
       link: "/app/user",
@@ -34,6 +35,7 @@ const AppHeaderSidebar = ({ displayName }) => {
       link: "/app/client",
       logo: "fa fa-users"
     }
+    */
   ]);
 
   return (

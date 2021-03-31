@@ -6,6 +6,7 @@ import Dashboard from "../dashboard";
 import Client from "../wfg-client";
 import StoreMaster from "../store-master";
 import Inventory from "../inventory";
+import Order from "../order";
 
 const Body = ({
   headerLocationId,
@@ -17,7 +18,12 @@ const Body = ({
     <Switch>
       <Route path={`/app/dashboard`} component={Dashboard} />
       <Route path={`/app/demo`} component={DashboardDemo} />
-      <Route path={`/app/client`} component={Client} />
+      <Route path={`/app/order`}>
+        <Order headerStoreId={headerStoreId} />
+      </Route>
+      <Route path={`/app/inventory`}>
+        <Inventory headerStoreId={headerStoreId} />
+      </Route>
       <Route path={`/app/store`}>
         <StoreMaster
           headerLocationId={headerLocationId}
@@ -25,9 +31,7 @@ const Body = ({
           setHeaderRefresh={setHeaderRefresh}
         />
       </Route>
-      <Route path={`/app/inventory`}>
-        <Inventory headerStoreId={headerStoreId} />
-      </Route>
+      <Route path={`/app/client`} component={Client} />
       <Redirect exact path="/app" to="/app/dashboard" />
     </Switch>
   );
